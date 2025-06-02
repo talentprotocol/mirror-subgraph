@@ -1,0 +1,133 @@
+type BaseDescriptionURISet @entity(immutable: true) {
+  id: Bytes!
+  clone: Bytes! # address
+  oldBaseDescriptionURI: String! # string
+  newBaseDescriptionURI: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type CloneDeployed @entity(immutable: true) {
+  id: Bytes!
+  factory: Bytes! # address
+  owner: Bytes! # address
+  clone: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type FactoryGuardSet @entity(immutable: true) {
+  id: Bytes!
+  guard: Boolean! # bool
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type FactoryImplementationSet @entity(immutable: true) {
+  id: Bytes!
+  factory: Bytes! # address
+  oldImplementation: Bytes! # address
+  newImplementation: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type FactoryLimitSet @entity(immutable: true) {
+  id: Bytes!
+  factory: Bytes! # address
+  oldLimit: BigInt! # uint256
+  newLimit: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type FundingRecipientSet @entity(immutable: true) {
+  id: Bytes!
+  clone: Bytes! # address
+  oldFundingRecipient: Bytes! # address
+  newFundingRecipient: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type PriceSet @entity(immutable: true) {
+  id: Bytes!
+  clone: Bytes! # address
+  oldLimit: BigInt! # uint256
+  newLimit: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type RendererSet @entity(immutable: true) {
+  id: Bytes!
+  clone: Bytes! # address
+  renderer: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type RoyaltyChange @entity(immutable: true) {
+  id: Bytes!
+  clone: Bytes! # address
+  oldRoyaltyRecipient: Bytes! # address
+  oldRoyaltyBPS: BigInt! # uint256
+  newRoyaltyRecipient: Bytes! # address
+  newRoyaltyBPS: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Transfer @entity(immutable: true) {
+  id: Bytes!
+  clone: Bytes! # address
+  from: Bytes! # address
+  to: Bytes! # address
+  tokenId: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type TributarySet @entity(immutable: true) {
+  id: Bytes!
+  factory: Bytes! # address
+  clone: Bytes! # address
+  oldTributary: Bytes! # address
+  newTributary: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type WritingEditionLimitSet @entity(immutable: true) {
+  id: Bytes!
+  clone: Bytes! # address
+  oldLimit: BigInt! # uint256
+  newLimit: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type WritingEditionPurchased @entity(immutable: true) {
+  id: Bytes!
+  clone: Bytes! # address
+  tokenId: BigInt! # uint256
+  recipient: Bytes! # address
+  price: BigInt! # uint256
+  message: String! # string
+  flatFeeAmount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
