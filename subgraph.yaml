@@ -6,57 +6,24 @@ schema:
 dataSources:
   - kind: ethereum
     name: Mirror Observer
-    network: base
+    network: matic
     source:
-      address: "0x3F2408693cc2E0C8E0bb68f039cEB6DEac0EC072"
-      abi: Mirror Observer
-      startBlock: 1757721
+      address: "0x3f2408693cc2e0c8e0bb68f039ceb6deac0ec072"
+      abi: MirrorObserver
+      startBlock: 51203350
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
       language: wasm/assemblyscript
       entities:
-        - BaseDescriptionURISet
         - CloneDeployed
-        - FactoryGuardSet
-        - FactoryImplementationSet
-        - FactoryLimitSet
-        - FundingRecipientSet
-        - PriceSet
-        - RendererSet
-        - RoyaltyChange
-        - Transfer
-        - TributarySet
-        - WritingEditionLimitSet
         - WritingEditionPurchased
       abis:
-        - name: Mirror Observer
-          file: ./abis/Mirror Observer.json
+        - name: MirrorObserver
+          file: ./abis/MirrorObserver.json
       eventHandlers:
-        - event: BaseDescriptionURISet(indexed address,string,string)
-          handler: handleBaseDescriptionURISet
         - event: CloneDeployed(indexed address,indexed address,indexed address)
           handler: handleCloneDeployed
-        - event: FactoryGuardSet(bool)
-          handler: handleFactoryGuardSet
-        - event: FactoryImplementationSet(indexed address,indexed address,indexed address)
-          handler: handleFactoryImplementationSet
-        - event: FactoryLimitSet(indexed address,uint256,uint256)
-          handler: handleFactoryLimitSet
-        - event: FundingRecipientSet(indexed address,indexed address,indexed address)
-          handler: handleFundingRecipientSet
-        - event: PriceSet(indexed address,uint256,uint256)
-          handler: handlePriceSet
-        - event: RendererSet(indexed address,indexed address)
-          handler: handleRendererSet
-        - event: RoyaltyChange(indexed address,indexed address,uint256,indexed address,uint256)
-          handler: handleRoyaltyChange
-        - event: Transfer(indexed address,indexed address,indexed address,uint256)
-          handler: handleTransfer
-        - event: TributarySet(indexed address,indexed address,address,indexed address)
-          handler: handleTributarySet
-        - event: WritingEditionLimitSet(indexed address,uint256,uint256)
-          handler: handleWritingEditionLimitSet
         - event: WritingEditionPurchased(indexed address,uint256,indexed address,uint256,string,uint256)
           handler: handleWritingEditionPurchased
       file: ./src/mirror-observer.ts
